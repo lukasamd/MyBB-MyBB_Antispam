@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8" />
+        <title>MyBB Antispam - changes in files</title>
+    </head>
+    <body>
+    
+<style type="text/css">
+<!--
+body {
+    width: 900px;
+    margin: auto;
+}
+pre {
+    border: 1px solid #888;
+    padding: 10px;
+    overflow: scroll;
+    margin-bottom: 50px;
+}
+h1 {
+    font-family: Arial;
+    border-bottom: 1px solid #000;
+    text-align: center;
+    padding-bottom: 10px;
+}
+h2 {
+    font-family: Arial;
+    border-top: 1px dashed #BBB;
+    border-bottom: 1px dashed #BBB;
+    text-align: center;
+    padding: 5px;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+h3 {
+    font-family: Arial;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+//-->
+</style>    
+    
+
+<h1>MyBB Antispam - changes in files</h1>
+
+
+<h2>File: member.php</h2>
+
+
+<h3>Find:</h3>
+<pre>
+if(!empty($errors))
+</pre>
+
+<h3>Add before:</h3>
+<pre>
+// START - MyBB Antispam MOD
+if (isset($plugins->objects['ultimate Antispam']) && is_object($plugins->objects['ultimate Antispam']))
+{
+  $plugins->objects['ultimate Antispam']->captchaCheckLogin(); 
+}
+// END - MyBB Antispam MOD  
+</pre>    
+    
+<h3>Find:</h3>
+<pre>
+$username = "";
+$password = "";
+</pre>	
+	
+<h3>Add before:</h3>
+<pre>
+// START - MyBB Antispam MOD
+if (isset($plugins->objects['ultimate Antispam']) && is_object($plugins->objects['ultimate Antispam']))
+{
+  $plugins->objects['ultimate Antispam']->captchaGenerateLogin(); 
+}
+// END - MyBB Antispam MOD    
+</pre>  
+
+  
+  
+
+<h2>File: newreply.php</h2>
+
+
+<h3>Find:</h3>
+<pre>
+// One or more errors returned, fetch error list and throw to newreply page
+</pre> 
+  
+<h3>Add before:</h3>
+<pre>
+// START - MyBB Antispam MOD
+if (isset($plugins->objects['ultimate Antispam']) && is_object($plugins->objects['ultimate Antispam']))
+{
+  $plugins->objects['ultimate Antispam']->captchaCheckNewPost(); 
+}
+// END - MyBB Antispam MOD
+</pre>
+  
+<h3>Find:</h3>
+<pre>
+if($mybb->settings['threadreview'] != 0)
+</pre>
+  
+<h3>Add before:</h3>
+<pre>
+// START - MyBB Antispam MOD
+if (isset($plugins->objects['ultimate Antispam']) && is_object($plugins->objects['ultimate Antispam']))
+{
+  $plugins->objects['ultimate Antispam']->captchaGenerateNewPost(); 
+}
+// END - MyBB Antispam MOD
+</pre>  
+  
+  
+<h2>File: newthread.php</h2>
+
+
+
+<h3>Find:</h3>
+<pre>
+// One or more errors returned, fetch error list and throw to newthread page
+</pre> 
+  
+<h3>Add before:</h3>
+<pre>
+// START - MyBB Antispam MOD
+if (isset($plugins->objects['ultimate Antispam']) && is_object($plugins->objects['ultimate Antispam']))
+{
+  $plugins->objects['ultimate Antispam']->captchaCheckNewPost(); 
+}
+// END - MyBB Antispam MOD
+</pre>
+  
+<h3>Find:</h3>
+<pre>
+if($forumpermissions['canpostpolls'] != 0)
+</pre>
+
+<h3>Add before:</h3>
+<pre>
+// START - MyBB Antispam MOD
+if (isset($plugins->objects['ultimate Antispam']) && is_object($plugins->objects['ultimate Antispam']))
+{
+  $plugins->objects['ultimate Antispam']->captchaGenerateNewPost(); 
+}
+// END - MyBB Antispam MOD
+</pre>
+
+
+
+
+<h2>File: showthread.php</h2>
+
+
+<h3>Find:</h3>
+<pre>
+if($mybb->user['signature'])
+</pre>
+
+<h3>Add before:</h3>
+<pre>
+// START - MyBB Antispam MOD
+if (isset($plugins->objects['ultimate Antispam']) && is_object($plugins->objects['ultimate Antispam']))
+{
+  $plugins->objects['ultimate Antispam']->captchaGenerateNewPost(); 
+}
+// END - MyBB Antispam MOD 
+</pre>  
+     
+    
+    
+    </body>
+</html>
