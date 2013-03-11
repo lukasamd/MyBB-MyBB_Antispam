@@ -57,9 +57,9 @@ if(!empty($errors))
 <h3>Add before:</h3>
 <pre>
 // START - MyBB Antispam MOD
-if (isset($plugins->objects['ultimate Antispam']) && is_object($plugins->objects['ultimate Antispam']))
+if (isset($mybbAntispam))
 {
-  $plugins->objects['ultimate Antispam']->captchaCheckLogin(); 
+  $mybbAntispam->captchaCheckLogin(); 
 }
 // END - MyBB Antispam MOD  
 </pre>    
@@ -73,9 +73,9 @@ $password = "";
 <h3>Add before:</h3>
 <pre>
 // START - MyBB Antispam MOD
-if (isset($plugins->objects['ultimate Antispam']) && is_object($plugins->objects['ultimate Antispam']))
+if (isset($mybbAntispam))
 {
-  $plugins->objects['ultimate Antispam']->captchaGenerateLogin(); 
+  $mybbAntispam->captchaGenerateLogin(); 
 }
 // END - MyBB Antispam MOD    
 </pre>  
@@ -94,9 +94,9 @@ if (isset($plugins->objects['ultimate Antispam']) && is_object($plugins->objects
 <h3>Add before:</h3>
 <pre>
 // START - MyBB Antispam MOD
-if (isset($plugins->objects['ultimate Antispam']) && is_object($plugins->objects['ultimate Antispam']))
+if (isset($mybbAntispam))
 {
-  $plugins->objects['ultimate Antispam']->captchaCheckNewPost(); 
+  $mybbAntispam->captchaCheckNewPost(); 
 }
 // END - MyBB Antispam MOD
 </pre>
@@ -109,9 +109,9 @@ if($mybb->settings['threadreview'] != 0)
 <h3>Add before:</h3>
 <pre>
 // START - MyBB Antispam MOD
-if (isset($plugins->objects['ultimate Antispam']) && is_object($plugins->objects['ultimate Antispam']))
+if (isset($mybbAntispam))
 {
-  $plugins->objects['ultimate Antispam']->captchaGenerateNewPost(); 
+  $mybbAntispam->captchaGenerateNewPost(); 
 }
 // END - MyBB Antispam MOD
 </pre>  
@@ -129,9 +129,9 @@ if (isset($plugins->objects['ultimate Antispam']) && is_object($plugins->objects
 <h3>Add before:</h3>
 <pre>
 // START - MyBB Antispam MOD
-if (isset($plugins->objects['ultimate Antispam']) && is_object($plugins->objects['ultimate Antispam']))
+if (isset($mybbAntispam))
 {
-  $plugins->objects['ultimate Antispam']->captchaCheckNewPost(); 
+  $mybbAntispam->captchaCheckNewPost(); 
 }
 // END - MyBB Antispam MOD
 </pre>
@@ -144,9 +144,9 @@ if($forumpermissions['canpostpolls'] != 0)
 <h3>Add before:</h3>
 <pre>
 // START - MyBB Antispam MOD
-if (isset($plugins->objects['ultimate Antispam']) && is_object($plugins->objects['ultimate Antispam']))
+if (isset($mybbAntispam))
 {
-  $plugins->objects['ultimate Antispam']->captchaGenerateNewPost(); 
+  $mybbAntispam->captchaGenerateNewPost(); 
 }
 // END - MyBB Antispam MOD
 </pre>
@@ -165,9 +165,9 @@ if($mybb->user['signature'])
 <h3>Add before:</h3>
 <pre>
 // START - MyBB Antispam MOD
-if (isset($plugins->objects['ultimate Antispam']) && is_object($plugins->objects['ultimate Antispam']))
+if (isset($mybbAntispam))
 {
-  $plugins->objects['ultimate Antispam']->captchaGenerateNewPost(); 
+  $mybbAntispam->captchaGenerateNewPost(); 
 }
 // END - MyBB Antispam MOD 
 </pre>  

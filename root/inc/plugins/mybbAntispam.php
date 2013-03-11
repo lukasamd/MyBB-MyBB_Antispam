@@ -28,7 +28,8 @@ if (!defined("IN_MYBB")) exit;
  * Create plugin object
  * 
  */
-$plugins->objects['mybbAntispam'] = new mybbAntispam();
+$mybbAntispam = new mybbAntispam();
+$plugins->objects['mybbAntispam'] = $mybbAntispam;
 
 /**
  * Standard MyBB info function
