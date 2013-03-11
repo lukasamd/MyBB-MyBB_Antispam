@@ -152,15 +152,22 @@ class mybbAntispam
         global $lang;
         
         $lang->load("mybbAntispam");
-        $sub_menu[] = array("title" => $lang->mybbAntispamACPLink, "link" => "index.php?module=tools/mybbAntispam");
+        $sub_menu[] = array(
+            'id' => 'mybbAntispam', 
+            'title' => $lang->mybbAntispamACPLink, 
+            'link' => 'index.php?module=tools/mybbAntispam'
+        );
     }
 
     /**
      * Add action to ACP
      */
-    public function adminHandler(&$actions)
+    public function adminHandler(&$action)
     {
-        $actions['mybbAntispam'] = array('file' => 'mybbAntispam.php');
+        $action['mybbAntispam'] = array(
+            'active' => 'mybbAntispam', 
+            'file' => 'mybbAntispam.php'
+        );
     }
 
     /**
